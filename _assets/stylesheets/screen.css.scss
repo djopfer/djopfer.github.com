@@ -1,0 +1,284 @@
+@import "mixins";
+
+$preview_gutter: 15px;
+
+$preview_1200_width: 510px;
+$preview_1200_height: 170px;
+
+$preview_980_width: 395px;
+$preview_980_height: 132px;
+
+$preview_768_width: 287px;
+$preview_768_height: 96px;
+
+$preview_small_width: 260px;
+$preview_small_height: 87px;
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: image-url('fabric_of_squares_gray.png');
+}
+
+.content {
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, .2);
+}
+
+.intro {
+  background: #E4BD79;
+  background-image: url('/images/purty_wood.png');
+  padding: 140px 20px 100px;
+  text-align: center;
+
+  h1 {
+    color: #333;
+    text-shadow: white 0px 0px 4px;
+    font-size: 90px;
+    line-height: 104px;
+    font-family: "poetica-std", serif;
+  }
+}
+
+.projects {
+  padding: $preview_gutter;
+  @include radial-gradient(50% 50%, circle cover, #777, #333);
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      position: relative;
+      background-image: url('/images/small_wood.png');
+      padding: $preview_gutter;
+      display: inline-block;
+      margin: $preview_gutter;
+      float: left;
+      border-radius: 2px;
+      text-align: center;
+
+      img {
+        background: white;
+        border-radius: 2px;
+      }
+
+      a {
+        display: none;
+        position: absolute;
+        top: $preview_gutter;
+        left: $preview_gutter;
+        color: white;
+        font-size: 1.5em;
+        font-weight: 200;
+        text-shadow: black 1px 1px 0px;
+      }
+
+      .shade {
+        display: none;
+        position: absolute;
+        top: $preview_gutter;
+        left: $preview_gutter;
+        background-color: black;
+        opacity: .8;
+        filter: alpha(opacity = 80);
+      }
+    }
+  }
+}
+
+footer {
+  padding: 8px 0;
+}
+
+/*---------------------------------*/
+/* Small screen                    */
+/*---------------------------------*/
+@media (max-width: 767px) {
+  .navbar-fixed-top {
+    margin: 0;
+  }
+
+  footer {
+    padding-left: 10px;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .intro {
+    h1 {
+      font-size: 36px;
+      line-height: 50px;
+    }
+  }
+
+  .projects ul {
+    li {
+      margin-bottom: $preview_gutter + $preview_gutter;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      float: none;
+      width: $preview_small_width + $preview_gutter + $preview_gutter;
+      height: $preview_small_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_small_width;
+        height: $preview_small_height;
+      }
+
+      a {
+        display: block;
+        font-size: 0;
+        height: $preview_small_height;
+        line-height: $preview_small_height;
+        width: $preview_small_width;
+      }
+    }
+  }
+}
+
+/*-----------------------------------------*/
+/* Everything bigger than the small screen */
+/*-----------------------------------------*/
+@media (min-width: 768px) {
+  .projects li:hover {
+    a {
+      display: inline-block;
+    }
+
+    .shade {
+      display: block;
+    }
+  }
+}
+
+/*-----------------------------------------*/
+/* Everything smaller than large           */
+/*-----------------------------------------*/
+@media (max-width: 979px) {
+  .intro {
+    padding: 60px 20px;
+  }
+
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+
+/*-----------------------------------------*/
+/* Medium up to large                      */
+/*-----------------------------------------*/
+@media (min-width: 768px) and (max-width: 979px) {
+  .intro h1 {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .navbar-fixed-top {
+    .container {
+      width: 728px;
+    }
+  }
+
+  .projects ul {
+    li {
+      width: $preview_768_width + $preview_gutter + $preview_gutter;
+      height: $preview_768_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_768_width;
+        height: $preview_768_height;
+      }
+    }
+
+    li:hover a, li:hover .shade {
+      height: $preview_768_height;
+      line-height: $preview_768_height;
+      width: $preview_768_width;
+    }
+  }
+}
+
+/*-----------------------------------------*/
+/* Large up to XLarge                      */
+/*-----------------------------------------*/
+@media (min-width: 980px) and (max-width: 1199px) {
+  .intro h1 {
+    font-size: 75px;
+    line-height: 89px;
+  }
+
+  .projects ul {
+    li {
+      width: $preview_980_width + $preview_gutter + $preview_gutter;
+      height: $preview_980_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_980_width;
+        height: $preview_980_height;
+      }
+    }
+
+    li:hover a, li:hover .shade {
+      height: $preview_980_height;
+      line-height: $preview_980_height;
+      width: $preview_980_width;
+    }
+  }
+}
+
+/*-----------------------------------------*/
+/* XLarge                                  */
+/*-----------------------------------------*/
+@media (min-width: 1200px) {
+  .projects ul {
+    li {
+      width: $preview_1200_width + $preview_gutter + $preview_gutter;
+      height: $preview_1200_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_1200_width;
+        height: $preview_1200_height;
+      }
+    }
+
+    li:hover a, li:hover .shade {
+      height: $preview_1200_height;
+      line-height: $preview_1200_height;
+      width: $preview_1200_width;
+    }
+  }
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before, .cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1;
+}
+

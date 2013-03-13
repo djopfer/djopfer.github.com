@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+
+    <title>{{ page.title }}</title>
+
+    {% css_asset_tag site %}
+    - /_assets/stylesheets/bootstrap.css
+    - /_assets/stylesheets/bootstrap-lightbox.css
+    - /_assets/stylesheets/screen.css.scss
+    {% endcss_asset_tag %}
+
+    {% javascript_asset_tag global %}
+    - /_assets/javascripts/modernizr.js
+    - /_assets/javascripts/respond.js
+    {% endjavascript_asset_tag %}
+
+    <script src="//use.typekit.net/eoi3fla.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">daveopfer.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="intro">
+        <h1>Custom Woodworking</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">©2013 Dave Opfer</div>
+    </footer>
+
+    {% javascript_asset_tag global %}
+    - /_assets/javascripts/jquery.js
+    - /_assets/javascripts/bootstrap-lightbox.js
+    {% endjavascript_asset_tag %}
+  </body>
+</html>
+
