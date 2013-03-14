@@ -31,7 +31,7 @@ body {
 .intro {
   background: #E4BD79;
   background-image: url('/images/purty_wood.png');
-  padding: 140px 20px 100px;
+  padding: 100px 20px 50px;
   text-align: center;
 
   h1 {
@@ -43,10 +43,12 @@ body {
   }
 }
 
-.projects {
+.projects, .project {
   padding: $preview_gutter;
   @include radial-gradient(50% 50%, circle cover, #777, #333);
+}
 
+.projects {
   ul {
     list-style: none;
     margin: 0;
@@ -90,6 +92,24 @@ body {
   }
 }
 
+.project {
+  .inner {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 1.3em;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
 footer {
   padding: 8px 0;
 }
@@ -114,6 +134,12 @@ footer {
     h1 {
       font-size: 36px;
       line-height: 50px;
+    }
+  }
+
+  .project {
+    .inner {
+      width: 90%;
     }
   }
 
