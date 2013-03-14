@@ -16,6 +16,7 @@ task :deploy => [:generate] do
   origin = `git config --get remote.origin.url`.strip
 
   cd "_site" do
+    system "touch .nojekyll"
     system "git init"
     system "git remote add origin #{origin}"
     system "git add ."
