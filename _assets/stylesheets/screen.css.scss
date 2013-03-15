@@ -93,6 +93,8 @@ body {
 }
 
 .project {
+  position: relative;
+
   .inner {
     width: 60%;
     margin: 0 auto;
@@ -107,6 +109,30 @@ body {
 
   img {
     width: 100%;
+  }
+
+  .prev-page, .next-page {
+    padding: 10px;
+    font-size: 50px;
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+
+  .prev-page {
+    left: 10px;
+  }
+
+  .next-page {
+    right: 10px;
   }
 }
 
@@ -140,6 +166,14 @@ footer {
   .project {
     .inner {
       width: 90%;
+    }
+
+    .prev-page {
+      left: 5px;
+    }
+
+    .next-page {
+      right: 5px;
     }
   }
 
